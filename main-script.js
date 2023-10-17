@@ -32,9 +32,27 @@ confirmCheckoutButton.addEventListener('click', function () {
 
 function updateCart() {
     cartList.innerHTML = '';
-    cart.forEach(book => {
+    // cart.forEach(book => {
+    //     const li = document.createElement('li');
+    //     li.textContent = book;
+    //     cartList.appendChild(li);
+    // });
+    cart.forEach((book, index) => {
         const li = document.createElement('li');
         li.textContent = book;
+
+        // Create a cross button
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '✕';  // A simple cross symbol
+        removeBtn.addEventListener('click', function() {
+            cart.splice(index, 1); // Remove the book from the cart array
+            updateCart();  // Refresh the cart display
+        });
+
+        // Append the button to the li
+        li.appendChild(removeBtn);
+
+        // Append the li to the cart list
         cartList.appendChild(li);
     });
 

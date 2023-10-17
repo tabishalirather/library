@@ -248,5 +248,13 @@ body {
 	border-radius: 5px;      /* Optional: Adding a slight rounded corner for aesthetics */
 	margin-bottom: 10px;     /* Space between input boxes */
     }
+/* main-styles.css */
+.cart-section li button {
+	margin-left: 10px;  // Adjust as needed
+background-color: red;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
 
 
